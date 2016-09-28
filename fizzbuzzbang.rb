@@ -21,24 +21,30 @@ number = 1
 	end
 end
 
+puts "\n\n\n"
 
-## Iteration 4 (Don't concatenates Fizz+Buzz+Bang!!)
+## Iteration 4 (Ok!!)
 num = 1
 for num in 1..100 
 
     result = ""
+    if num % 3 == 0 || num % 5 == 0 || num.to_s.start_with?("1")
+    	if num % 3 == 0
+        	result << "Fizz"
+    	end
 
-    if num % 3 == 0
-        result << "Fizz"
-    elsif num % 5 == 0
-        result << "Buzz"
-    elsif num.to_s.start_with?("1")
-        result << "Bang"
-    else
-        result << num.to_s
-    end
-    puts result
- end
-
+    	if num % 5 == 0
+        	result << "Buzz"
+    	end
     
+    	if num.to_s.start_with?("1")
+        	result << "Bang"
+    	end
+    else
+    	result << num.to_s
+    end
+ 
+    puts result
+ 
+ end
 
