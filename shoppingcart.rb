@@ -1,5 +1,5 @@
 # SHOPPING CART
-
+## Iteration One
 
 class ShoppingCart
   def initialize
@@ -45,7 +45,7 @@ class Fruit < Item
   end
 end
 
-
+#Creation of a shopping list array with all items, fruits and housewares, adding everyone.
 shopping_list = []
 shopping_list.push(Fruit.new("Banana", 10))
 shopping_list.push(Fruit.new("Orange Juice", 10))
@@ -53,6 +53,7 @@ shopping_list.push(Item.new("Rice", 1))
 shopping_list.push(Houseware.new("Vacuum Cleaner", 150))
 shopping_list.push(Item.new("Anchovies", 2))
 
+#Shows the list of every item with corresponding discounted price (if proceeds)
 shopping_list.each { |item| puts item.name.to_s() +" "+ item.price.to_s() + " €/$"}
 
 
