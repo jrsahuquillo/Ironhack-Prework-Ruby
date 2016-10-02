@@ -1,14 +1,20 @@
 # SHOPPING CART
-## Iteration One
+## Iteration Two
 
 class ShoppingCart
   def initialize
     @items = []
   end
+
+  	def add_item(item)
+  		#Add your item to @items
+  		attr_reader :item
+  		@items.push(item)
+  	end
 end
 
 class Item 
-  attr_reader :name
+  attr_reader :name, :price
   def initialize(name, price)
 
       @name = name
@@ -45,6 +51,17 @@ class Fruit < Item
   end
 end
 
+
+add_item(Fruit.new("Banana", 10))
+add_item(Fruit.new("Orange Juice", 10))
+add_item(Item.new("Rice", 1))
+add_item(Houseware.new("Vacuum Cleaner", 150))
+add_item(Item.new("Anchovies", 2))
+
+
+@item.each { |item| puts item.name.to_s() +" "+ item.price.to_s() + " €/$"}
+
+=begin
 #Creation of a shopping list array with all items, fruits and housewares, adding everyone.
 shopping_list = []
 shopping_list.push(Fruit.new("Banana", 10))
@@ -55,7 +72,7 @@ shopping_list.push(Item.new("Anchovies", 2))
 
 #Shows the list of every item with corresponding discounted price (if proceeds)
 shopping_list.each { |item| puts item.name.to_s() +" "+ item.price.to_s() + " €/$"}
-
+=end
 
 
 =begin
