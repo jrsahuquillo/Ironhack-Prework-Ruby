@@ -1,7 +1,5 @@
 # SHOPPING CART
-## Iteration Two
-
-
+## Iteration Three
 
 class ShoppingCart
   def initialize
@@ -9,17 +7,20 @@ class ShoppingCart
   end
 
   	def add_item(item)
+
   		#Add your item to @items
   		@items.push(item)
   	end
 
+  	# Chekout method that iterates over the price of every @items array added element, and returns the total price.
   	def checkout
   		sum = 0
-  		@items.each do |item , x|
-  			sum = sum + x.to_i
-  			puts sum
+  		@items.each do |item|
+  				sum = sum + item.price
   		end
+  		sum
   	end
+
 end
 
 class Item 
@@ -68,11 +69,13 @@ vaccuum = Houseware.new("Vaccuum", 150)
 oj = Item.new("Orange Juice", 10)
 rice = Item.new("Rice", 1)
 anchovies = Item.new("Anchovies", 2)
+tape = Item.new("Tape", 1)
 
 joshs_cart.add_item(oj)
 joshs_cart.add_item(rice)
 joshs_cart.checkout
 
+puts "Your total today is $#{joshs_cart.checkout}. Have a nice day!"
 
 
 =begin
