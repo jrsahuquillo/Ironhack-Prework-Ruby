@@ -1,5 +1,5 @@
 # SHOPPING CART
-## Iteration Three
+## Iteration Four
 
 class ShoppingCart
   def initialize
@@ -16,7 +16,13 @@ class ShoppingCart
   	def checkout
   		sum = 0
   		@items.each do |item|
+  			#if..else statement for calculate total price discount if there are less than 5 items, or 5 or more items.
+  			if @items.length <=5
   				sum = sum + item.price
+ 
+  			else
+  				sum = sum + item.price * 0.9
+  			end
   		end
   		sum
   	end
@@ -73,6 +79,10 @@ tape = Item.new("Tape", 1)
 
 joshs_cart.add_item(oj)
 joshs_cart.add_item(rice)
+joshs_cart.add_item(vaccuum)
+joshs_cart.add_item(banana)
+joshs_cart.add_item(anchovies)
+joshs_cart.add_item(tape)
 joshs_cart.checkout
 
 puts "Your total today is $#{joshs_cart.checkout}. Have a nice day!"
