@@ -1,6 +1,8 @@
 # SHOPPING CART
 ## Iteration Two
 
+
+
 class ShoppingCart
   def initialize
     @items = []
@@ -8,8 +10,15 @@ class ShoppingCart
 
   	def add_item(item)
   		#Add your item to @items
-  		attr_reader :item
   		@items.push(item)
+  	end
+
+  	def checkout
+  		sum = 0
+  		@items.each do |item , x|
+  			sum = sum + x.to_i
+  			puts sum
+  		end
   	end
 end
 
@@ -52,16 +61,22 @@ class Fruit < Item
 end
 
 
-add_item(Fruit.new("Banana", 10))
-add_item(Fruit.new("Orange Juice", 10))
-add_item(Item.new("Rice", 1))
-add_item(Houseware.new("Vacuum Cleaner", 150))
-add_item(Item.new("Anchovies", 2))
+
+joshs_cart = ShoppingCart.new
+banana = Fruit.new("Banana", 10)
+vaccuum = Houseware.new("Vaccuum", 150)
+oj = Item.new("Orange Juice", 10)
+rice = Item.new("Rice", 1)
+anchovies = Item.new("Anchovies", 2)
+
+joshs_cart.add_item(oj)
+joshs_cart.add_item(rice)
+joshs_cart.checkout
 
 
-@item.each { |item| puts item.name.to_s() +" "+ item.price.to_s() + " €/$"}
 
 =begin
+
 #Creation of a shopping list array with all items, fruits and housewares, adding everyone.
 shopping_list = []
 shopping_list.push(Fruit.new("Banana", 10))
