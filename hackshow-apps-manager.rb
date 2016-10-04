@@ -3,6 +3,7 @@
 
 
 class App
+	attr_reader :app_name, :app_points
 	def initialize(app_name, app_author, app_os, app_points)
 		@apps = []
 		@app_name = app_name
@@ -36,8 +37,17 @@ class App
 	
 	end
 
-	#def compare
-	#end
+	def compare(app_to_compare)
+		
+		if @app_points < app_to_compare.app_points
+			@app_score = " is worst than "
+		elsif @app_points == app_to_compare.app_points
+			@app_score = " is equal than "
+		else
+			@app_score = " is better than "
+		end
+		puts @app_name + @app_score + app_to_compare.app_name
+	end
 
 end
 
@@ -47,8 +57,6 @@ app = App.new "ILoveApples", "Richard Stallman", "iOS", 8
 
 app.description #Iteration one
 app.evaluation #Iteration two
-
-
 
 #Iteration 3: Add a method to compare the score between two apps and it also returns the app with higher value.
 other_app = App.new "SmashingCandies", "Steve Ballmer", "iOS", 6
