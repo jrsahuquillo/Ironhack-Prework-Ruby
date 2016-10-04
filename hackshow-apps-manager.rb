@@ -11,15 +11,16 @@ class App
 		@app_points = app_points
 	end
 
-	def description
+	def description #Iteration one
 		puts @app_author + " has developed " + @app_name + " for " + @app_os + " and he has got " + @app_points.to_s + " points."
 	end
 
 
-	def evaluation
+	def evaluation #Iteration two
+		#Alert when points are lower than 0 and higher than 10.
 		if @app_points < 0 || @app_points > 10
-			puts "Evaluation error, try to set another punctuation"
-
+			puts "Evaluation error, try to set another score between 0 to 10!"
+		#If-else statement to output the corresponding literal score.
 		else
 			if @app_points >= 0 && @app_points <= 4
 				@app_evaluation = "a poor"
@@ -40,5 +41,5 @@ end
 
 app = App.new "ILoveApples", "Richard Stallman", "iOS", 8
 
-app.description
-app.evaluation
+app.description #Iteration one
+app.evaluation #Iteration two
