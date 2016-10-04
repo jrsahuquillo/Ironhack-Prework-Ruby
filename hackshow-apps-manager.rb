@@ -1,5 +1,5 @@
 # Hackshow Apps Manager
-#Iteration Two
+#Iteration Three
 
 
 class App
@@ -34,12 +34,25 @@ class App
 		puts @app_author + "has developed " + @app_name +  " for " + @app_os + " and he has made " + @app_evaluation + " aplication."
 		end	 
 	
-	end	
+	end
+
+	#def compare
+	#end
 
 end
 
 
 app = App.new "ILoveApples", "Richard Stallman", "iOS", 8
 
+
 app.description #Iteration one
 app.evaluation #Iteration two
+
+
+
+#Iteration 3: Add a method to compare the score between two apps and it also returns the app with higher value.
+other_app = App.new "SmashingCandies", "Steve Ballmer", "iOS", 6
+app.compare other_app
+# >> ILoveApples is better than SmashingCandies
+
+
